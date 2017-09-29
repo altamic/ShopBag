@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="R3PI" translatesAutoresizingMaskIntoConstraints="NO" id="vns-3z-heA">
+                                <rect key="frame" x="40" y="38" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="JJ2-ZC-XW8"/>
+                                    <constraint firstAttribute="width" secondItem="vns-3z-heA" secondAttribute="height" multiplier="15:8" id="tPi-GQ-Zce"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnA-qt-4fa">
+                                <rect key="frame" x="40" y="178" width="240" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="QCj-EU-fN2"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Technical Evaluation">
+                                        <attributes>
+                                            <font key="NSFont" size="24" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="“iOS Developer”">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" HomeCoding Exercise">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ShoppingBag" translatesAutoresizingMaskIntoConstraints="NO" id="dfy-Vu-AFS">
+                                <rect key="frame" x="112" y="270" width="96" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="96" id="OBY-i9-EF8"/>
+                                    <constraint firstAttribute="height" constant="96" id="olV-jo-8T5"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FC7-UT-WC6">
+                                <rect key="frame" x="40" y="374" width="240" height="72"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="Wjz-b4-QHa"/>
+                                    <constraint firstAttribute="width" constant="240" id="dBw-zd-JDh"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="ShopBag">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="by">
+                                        <attributes>
+                                            <font key="NSFont" size="10" name=".AppleSystemUIFont"/>
+                                            <font key="NSOriginalFont" size="10" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Michelangelo Altamore">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
+                                            <font key="NSOriginalFont" size="14" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" (altamic)">
+                                        <attributes>
+                                            <font key="NSFont" size="13" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wnA-qt-4fa" firstAttribute="top" secondItem="vns-3z-heA" secondAttribute="bottom" constant="12" id="Bz8-WC-Cx1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wnA-qt-4fa" secondAttribute="trailing" constant="24" id="HWO-zh-3I6"/>
+                            <constraint firstItem="FC7-UT-WC6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="RDM-Kp-qWe"/>
+                            <constraint firstItem="dfy-Vu-AFS" firstAttribute="top" secondItem="wnA-qt-4fa" secondAttribute="bottom" constant="12" id="Sg3-TB-PWK"/>
+                            <constraint firstItem="wnA-qt-4fa" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="aOw-KW-R4L"/>
+                            <constraint firstItem="vns-3z-heA" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="iIy-Ea-fyY"/>
+                            <constraint firstItem="wnA-qt-4fa" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="24" id="iv6-zp-QYD"/>
+                            <constraint firstItem="dfy-Vu-AFS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ji4-vP-Drh"/>
+                            <constraint firstItem="FC7-UT-WC6" firstAttribute="top" secondItem="dfy-Vu-AFS" secondAttribute="bottom" constant="8" id="sMK-J9-dXE"/>
+                            <constraint firstItem="vns-3z-heA" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="18" id="ykA-JG-O7a"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="50.625" y="373.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="R3PI" width="267" height="120"/>
+        <image name="ShoppingBag" width="95" height="107"/>
+    </resources>
+</document>
