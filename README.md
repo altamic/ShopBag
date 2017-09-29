@@ -1,14 +1,12 @@
 # ShopBag
 
-## HomeCoding Exercise
-
 <img src="Images/screenshot.png" />
 
 [Online Demo](https://appetize.io/app/2q2w19r1qcvvvrhkepabpjwjdw?device=iphone5s&scale=75&orientation=portrait&osVersion=11.0&deviceColor=black)
 
 ### Design notes
 
-Pretty standard Apple MVC. We have 2 view controllers: ProductsViewController, the first one, let the user select (or deselect) products; the second one is CheckoutViewController: manages quantities and the grand total. As requested in the assigment, the user can select a different currency in which prices are converted and shown accordingly.
+Pretty standard Apple MVC. We have 2 view controllers: `ProductsViewController`, the first one, let the user select (or deselect) products; the second one is `CheckoutViewController`: manages quantities and the grand total. As requested in the assigment, the user can select a different currency in which prices are converted and shown accordingly.
 
 ### Some habits and observations
 
@@ -17,7 +15,6 @@ I usually minimize the use of optionals and nils by unwrapping aggressively when
 #### Case 1
 
 ```swift
-....
 let urlString = "http://apilayer.net/api/live?currencies=EUR,CHF,GBP"
 let url = URL(string: urlString)!
 ```
@@ -109,3 +106,4 @@ You can run the test suite from XCode issuing a ⌘U.
 # License
 
 Copyright 2017 Michelangelo Altamore. It may be redistributed under the terms specified in the [LICENSE](LICENSE) file.
+
