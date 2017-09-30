@@ -6,11 +6,11 @@
 
 ### Design notes
 
-Pretty standard Apple MVC. We have 2 view controllers: `ProductsViewController`, the first one, let the user select (or deselect) products; the second one is `CheckoutViewController`: manages quantities and the grand total. As requested in the assigment, the user can select a different currency in which prices are converted and shown accordingly.
+Pretty standard Apple MVC. We have 2 view controllers: `ProductsViewController`, the first one, lets the user select (or deselect) products; the second one is `CheckoutViewController`: manages quantities and the grand total. As requested in the assignment, the user can select a different currency in which prices are converted and shown accordingly.
 
 ### Some habits and observations
 
-I usually minimize the use of optionals and nils by unwrapping aggressively when I am in control of the optional at compile time<sup>1</sup> (that is the same principle of IBOutlets) or when I can instantiate a dummy/default instance of a class instead of spreading nils around<sup>2</sup> for example:
+I usually minimize the use of optionals and nils by unwrapping aggressively when I am in control of the optional at compile time<sup>1</sup> (that is the same principle of IBOutlets) or when I can instantiate a dummy/default instance of a class, instead of spreading nils around<sup>2</sup>, for example:
 
 #### Case 1
 
@@ -26,7 +26,7 @@ var layer = CALayer()
 var path = UIBezierPath()
 ```
 
-I am a fan of [IIFE](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression) in javascript and I can do that in Swift too, isolating boring initialization details as in:
+I am a fan of [IIFE](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression) in JavaScript. Since I also can do the same in Swift, I tend to isolate boring initialization details as in:
 
 ```swift
 lazy var badgeLabel: UILabel = {
@@ -44,7 +44,7 @@ lazy var badgeLabel: UILabel = {
   return label
 }()
 ```
-I am a long-time rubyist. It shines through my swift code:
+I am a long-time rubyist. It shines through my Swift code:
 
 ```swift
 let lineItems = range.reduce(emptyLineItem) { (acc, itemNumber) -> [LineItem] in
@@ -62,7 +62,7 @@ let lineItems = range.reduce(emptyLineItem) { (acc, itemNumber) -> [LineItem] in
 }
 ```
 
-Ruby is dynamic ..but I like also statically typed languages with parametric polymorphism (the so called Generics):
+Ruby is dynamic… but I also like statically typed languages with parametric polymorphism (the so called Generics):
 ```swift
 import Foundation
 
@@ -101,7 +101,7 @@ ShopBagTests and ShopBagUITests score respectively 446 and 497 LOC.
 
 You can run the test suite from XCode issuing a ⌘U.
 
-> Thanks for your time!!
+> Thanks for your time!
 
 # License
 
