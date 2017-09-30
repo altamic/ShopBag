@@ -2,7 +2,7 @@
 
 <img src="Images/screenshot.png" />
 
-[Online Demo](https://appetize.io/app/2q2w19r1qcvvvrhkepabpjwjdw?device=iphone5s&scale=75&orientation=portrait&osVersion=11.0&deviceColor=black)
+[Online Demo](https://appetize.io/app/2q2w19r1qcvvvrhkepabpjwjdw?device=iphone5s&scale=100&orientation=portrait&osVersion=11.0&deviceColor=black)
 
 ### Design notes
 
