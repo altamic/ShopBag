@@ -1,6 +1,7 @@
 # ShopBag
 
-<img src="Images/screenshot.png" />
+![ShopBag Screenshot](https://raw.githubusercontent.com/altamic/ShopBag/master/Images/screenshot.png)
+
 
 [Online Demo](https://appetize.io/app/2q2w19r1qcvvvrhkepabpjwjdw?device=iphone5s&scale=100&orientation=portrait&osVersion=11.0&deviceColor=black)
 
@@ -94,7 +95,7 @@ I've produced two different test targets:
 * ShopBagTests: scoring 25 Unit Tests (models, utils)
 * ShopBagUITests: with 13 UI Tests (view controllers)
 
-<img src="Images/coverage.png" />
+![ShopBag coverage](https://raw.githubusercontent.com/altamic/ShopBag/master/Images/coverage.png)
 
 for a coverage of about 87.5% over less than 750 lines of code (ShopBag target).
 ShopBagTests and ShopBagUITests score respectively 446 and 497 LOC.
