@@ -120,7 +120,7 @@ class CheckoutViewController: UITableViewController {
       httpStatus.statusCode <= 299 else {
       // check for http errors
       print("\(msg) HTTP status code should be 2xx")
-      print("response = \(response)")
+        print("response = \(String(describing: response))")
       disableSelectCurrencyButton()
       return
     }
