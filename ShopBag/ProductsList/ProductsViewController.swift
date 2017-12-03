@@ -181,6 +181,7 @@ extension ProductsViewController: CAAnimationDelegate {
   
   func putIntoBagAnimation() {
     tableView.isUserInteractionEnabled = false
+    shopBagButton.isUserInteractionEnabled = false
     
     let animation = CAKeyframeAnimation(keyPath: "position")
     animation.path = path.cgPath
@@ -222,6 +223,7 @@ extension ProductsViewController: CAAnimationDelegate {
     if anim == layer.animation(forKey: "putIntoBag") {
       
       tableView.isUserInteractionEnabled = true
+      shopBagButton.isUserInteractionEnabled = true
       
       layer.removeAllAnimations()
       layer.removeFromSuperlayer()
