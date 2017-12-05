@@ -44,6 +44,7 @@ class ProductsViewController: UITableViewController {
     label.font = UIFont.boldSystemFont(ofSize: 7)
     label.textAlignment = .center
     label.text = "0"
+    label.accessibilityIdentifier = "BadgeLabel"
     label.layer.cornerRadius = label.bounds.size.height / 2
     label.layer.masksToBounds = true
     label.layer.borderWidth = 1
@@ -89,8 +90,10 @@ class ProductsViewController: UITableViewController {
   
   func toggleBadgeVisibility() {
     if productsInBag.count > 0 {
+      shopBagBarButton.isAccessibilityElement = false
       badgeLabel.isHidden = false
     } else {
+      shopBagBarButton.isAccessibilityElement = true
       badgeLabel.isHidden = true
     }
   }

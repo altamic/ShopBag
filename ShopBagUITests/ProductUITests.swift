@@ -13,6 +13,9 @@ class ProductUITests: XCTestCase {
   
   var app: XCUIApplication!
   
+  let putIntoBagAnimation = 4.5
+  let removeFromBagAnimation = 1.5
+  
   override func setUp() {
     super.setUp()
 
@@ -56,7 +59,6 @@ class ProductUITests: XCTestCase {
   
   func testUserInteractionDisabledDuringAnimation() {
     let tablesQuery = app.tables
-    let putIntoBagAnimation = 4.5
     
     // Select All
     let peas = tablesQuery.staticTexts["Peas"]
@@ -72,8 +74,6 @@ class ProductUITests: XCTestCase {
   
   func testAddAllIntoShoppingBag() {
     let tablesQuery = app.tables
-    let putIntoBagAnimation = 4.5
-    let removeFromBagAnimation = 1.0
     
     // Select All
     let peas = tablesQuery.staticTexts["Peas"]
@@ -83,6 +83,11 @@ class ProductUITests: XCTestCase {
     
     peas.tap()
     
+    waitForExpectations(timeout: putIntoBagAnimation)
+    
+    let badgeLabelOne = app.navigationBars["Products"].staticTexts["1"]
+    expectation(for: NSPredicate(format: "identifier == \"BadgeLabel\""),
+                evaluatedWith: badgeLabelOne, handler: nil)
     
     waitForExpectations(timeout: putIntoBagAnimation)
     
@@ -95,12 +100,24 @@ class ProductUITests: XCTestCase {
     
     waitForExpectations(timeout: putIntoBagAnimation)
     
+    let badgeLabelTwo = app.navigationBars["Products"].staticTexts["2"]
+    expectation(for: NSPredicate(format: "identifier == \"BadgeLabel\""),
+                evaluatedWith: badgeLabelTwo, handler: nil)
+    
+    waitForExpectations(timeout: putIntoBagAnimation)
+    
     let milk = tablesQuery.staticTexts["Milk"]
     let milkCell = tablesQuery.cells.element(boundBy: 2)
     expectation(for: NSPredicate(format: "isSelected == true"),
                 evaluatedWith: milkCell, handler: nil)
     
     milk.tap()
+    
+    waitForExpectations(timeout: putIntoBagAnimation)
+    
+    let badgeLabelThree = app.navigationBars["Products"].staticTexts["3"]
+    expectation(for: NSPredicate(format: "identifier == \"BadgeLabel\""),
+                evaluatedWith: badgeLabelThree, handler: nil)
     
     waitForExpectations(timeout: putIntoBagAnimation)
     
@@ -113,6 +130,13 @@ class ProductUITests: XCTestCase {
     
     waitForExpectations(timeout: putIntoBagAnimation)
     
+    let badgeLabelFour = app.navigationBars["Products"].staticTexts["4"]
+    expectation(for: NSPredicate(format: "identifier == \"BadgeLabel\""),
+                evaluatedWith: badgeLabelFour, handler: nil)
+    
+    waitForExpectations(timeout: putIntoBagAnimation)
+    
+    
     // Deselect all
     expectation(for: NSPredicate(format: "isSelected == false"),
                 evaluatedWith: peasCell, handler: nil)
@@ -121,10 +145,24 @@ class ProductUITests: XCTestCase {
 
     waitForExpectations(timeout: removeFromBagAnimation)
     
+    let badgeLabelThree_ = app.navigationBars["Products"].staticTexts["3"]
+    expectation(for: NSPredicate(format: "identifier == \"BadgeLabel\""),
+                evaluatedWith: badgeLabelThree_, handler: nil)
+    
+    waitForExpectations(timeout: removeFromBagAnimation)
+    
+    
     expectation(for: NSPredicate(format: "isSelected == false"),
                 evaluatedWith: eggsCell, handler: nil)
     
     eggs.tap()
+  
+    waitForExpectations(timeout: removeFromBagAnimation)
+    
+    
+    let badgeLabelTwo_ = app.navigationBars["Products"].staticTexts["2"]
+    expectation(for: NSPredicate(format: "identifier == \"BadgeLabel\""),
+                evaluatedWith: badgeLabelTwo_, handler: nil)
     
     waitForExpectations(timeout: removeFromBagAnimation)
     
@@ -132,6 +170,13 @@ class ProductUITests: XCTestCase {
                 evaluatedWith: milkCell, handler: nil)
     
     milk.tap()
+    
+    waitForExpectations(timeout: removeFromBagAnimation)
+    
+    
+    let badgeLabelOne_ = app.navigationBars["Products"].staticTexts["1"]
+    expectation(for: NSPredicate(format: "identifier == \"BadgeLabel\""),
+                evaluatedWith: badgeLabelOne_, handler: nil)
     
     waitForExpectations(timeout: removeFromBagAnimation)
     
@@ -152,15 +197,19 @@ class ProductUITests: XCTestCase {
     
     peas.tap()
     
-    let putIntoBagAnimation = 4.5
     waitForExpectations(timeout: putIntoBagAnimation)
+    
+    let badgeLabelOne = app.navigationBars["Products"].staticTexts["1"]
+    expectation(for: NSPredicate(format: "identifier == \"BadgeLabel\""),
+                evaluatedWith: badgeLabelOne, handler: nil)
+    
+    waitForExpectations(timeout: putIntoBagAnimation)
+    
+    peas.tap()
     
     expectation(for: NSPredicate(format: "isSelected == false"),
                 evaluatedWith: peasCell, handler: nil)
     
-    peas.tap()
-    
-    let removeFromBagAnimation = 1.0
     waitForExpectations(timeout: removeFromBagAnimation)
   }
 
