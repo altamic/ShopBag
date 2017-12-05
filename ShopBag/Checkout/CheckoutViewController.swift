@@ -159,8 +159,8 @@ class CheckoutViewController: UITableViewController {
         let initialValue: [Currency: Double] = [.usd: 1.0]
         self.currencyRatios = quotes.reduce(initialValue) { (acc, item) in
           let key = item.key
-          let index = key.index(key.startIndex, offsetBy: 3) // What an awful Swift API ..and no: I will not use a String extension!!
-          let currencyString = String(describing: key.substring(from: index))
+          let index = key.index(key.startIndex, offsetBy: 3)
+          let currencyString = String(describing: key[index...])
           return acc.merge(with: [Currency(rawValue: currencyString)! : (1.0 / item.value)])
         }
         

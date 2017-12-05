@@ -80,7 +80,7 @@ class ProductsViewController: UITableViewController {
     }
   }
 
-  dynamic func checkoutAction() {
+  @objc dynamic func checkoutAction() {
     if productsInBag.count == 0 {
       self.showMessage(message: "Please select at least one product")
     } else {

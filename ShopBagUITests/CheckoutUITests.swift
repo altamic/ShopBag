@@ -28,7 +28,7 @@ class CheckoutUITests: XCTestCase {
     app = XCUIApplication()
     app.launch()
     
-    XCUIDevice.shared().orientation = .portrait
+    XCUIDevice.shared.orientation = .portrait
   }
   
   override func tearDown() {
