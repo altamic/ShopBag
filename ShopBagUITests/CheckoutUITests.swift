@@ -129,12 +129,12 @@ class CheckoutUITests: XCTestCase {
     expectation(for: NSPredicate(format: "exists == true"),
                 evaluatedWith: total, handler: nil)
     
-    waitForExpectations(timeout: 2)
+    waitForExpectations(timeout: 4)
     
     expectation(for: NSPredicate(format: "label == \"$\(eggs + peas)\""),
                 evaluatedWith: total, handler: nil)
     
-    waitForExpectations(timeout: 2)
+    waitForExpectations(timeout: 4)
   }
   
   func testChangeCurrency() {
