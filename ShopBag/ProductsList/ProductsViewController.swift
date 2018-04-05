@@ -83,7 +83,8 @@ class ProductsViewController: UITableViewController {
   @objc dynamic func checkoutAction() {
     if productsInBag.count == 0 {
       self.showMessage(message: "Please select at least one product")
-    } else {
+    }
+    else {
       performSegue(withIdentifier: checkoutSegueIdentifier, sender: self)
     }
   }
@@ -92,7 +93,8 @@ class ProductsViewController: UITableViewController {
     if productsInBag.count > 0 {
       shopBagBarButton.isAccessibilityElement = false
       badgeLabel.isHidden = false
-    } else {
+    }
+    else {
       shopBagBarButton.isAccessibilityElement = true
       badgeLabel.isHidden = true
     }

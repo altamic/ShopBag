@@ -101,7 +101,8 @@ class LineItemTests: XCTestCase {
         
         if quantity > 0 {
           XCTAssertEqual(Decimal(quantity) * lineItem.product.price(),lineItem.subTotal(), "SubTotal is not computed correctly")
-        } else {
+        }
+        else {
           XCTAssertEqual(Decimal(0) * lineItem.product.price(), lineItem.subTotal(), "SubTotal is not computed correctly")
         }
       }

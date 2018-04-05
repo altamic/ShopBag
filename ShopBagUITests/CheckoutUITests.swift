@@ -197,7 +197,8 @@ class CheckoutUITests: XCTestCase {
       navBarButton.tap()
       
       waitForExpectations(timeout: 5.0)
-    } else {
+    }
+    else {
       expectation(for: NSPredicate(format: "isEnabled == false"),
                   evaluatedWith: gbp, handler: nil)
       

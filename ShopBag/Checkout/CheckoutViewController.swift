@@ -39,7 +39,8 @@ class CheckoutViewController: UITableViewController {
         let ratio = currencyRatios[currency] {
       Product.CURRENCY_RATIO = ratio
       Product.CURRENCY_NAME = currency
-    } else {
+    }
+    else {
       currencySelectionView.selectedSegmentIndex = 0
       currencySelectionView.isEnabled = false
     }
