@@ -11,7 +11,7 @@ Pretty standard Apple MVC. We have 2 view controllers: `ProductsViewController`,
 
 ### Some habits and observations
 
-I usually minimize the use of optionals and nils by unwrapping aggressively when I am in control of the optional at compile time<sup>1</sup> (that is the same principle of IBOutlets) or when I can instantiate a dummy/default instance of a class, instead of spreading nils around<sup>2</sup>, for example:
+I usually minimize the use of optionals and `nil`s by unwrapping aggressively when I am in control of the optional at compile time<sup>1</sup> (that is the same principle of `IBOutlets`) or when I can instantiate a dummy/default instance of a class, instead of spreading `nil`s around<sup>2</sup>, for example:
 
 #### Case 1
 
