@@ -26,7 +26,6 @@ class ProductTableViewCell: UITableViewCell {
     super.awakeFromNib()
     // Initialization code
   }
-  
 }
 
 extension ProductTableViewCell: ProductConfigurable {

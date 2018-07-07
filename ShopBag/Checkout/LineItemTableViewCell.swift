@@ -24,15 +24,15 @@ class LineItemTableViewCell: UITableViewCell {
   
   @IBOutlet weak var quantity: UILabel!
   
-  var addOneBlock: (()-> Void) = { }
-  var minusOneBlock: (()-> Void) = { }
+  var addOneBlock: (()-> Void)?
+  var minusOneBlock: (()-> Void)?
   
   @IBAction func minusOneAction() {
-    self.minusOneBlock()
+    self.minusOneBlock?()
   }
   
   @IBAction func plusOneAction() {
-    self.addOneBlock()
+    self.addOneBlock?()
   }
   
   override func awakeFromNib() {
