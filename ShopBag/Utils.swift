@@ -22,7 +22,7 @@ func formatCurrency(value: Decimal, currencyCode: Currency = .usd) -> String {
 }
 
 extension Dictionary {
-  func merge(with: Dictionary<Key,Value>) -> Dictionary<Key,Value> {
+  func merge(with: [Key: Value]) -> [Key: Value] {
     var copy = self
     for (k, v) in with {
       copy[k] = v
