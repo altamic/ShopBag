@@ -106,5 +106,5 @@ You can run the test suite from XCode issuing a ⌘U.
 
 # License
 
-Copyright 2017 Michelangelo Altamore. It may be redistributed under the terms specified in the [LICENSE](LICENSE) file.
+Copyright 2017-2018 Michelangelo Altamore. It may be redistributed under the terms specified in the [LICENSE](LICENSE) file.
 
