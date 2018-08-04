@@ -11,6 +11,9 @@
 		7D3036A71F75812200F5A1F0 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3036A61F75812200F5A1F0 /* ProductsViewController.swift */; };
 		7D3036AA1F75812200F5A1F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D3036A81F75812200F5A1F0 /* Main.storyboard */; };
 		7D3036AF1F75812200F5A1F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D3036AD1F75812200F5A1F0 /* LaunchScreen.storyboard */; };
+		7D6C30242115E29A00690B7B /* Currencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6C30232115E29A00690B7B /* Currencies.swift */; };
+		7D6C302F2115F70200690B7B /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6C302E2115F70200690B7B /* DataRequest.swift */; };
+		7D6C30312115FC8500690B7B /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6C30302115FC8500690B7B /* ApiRouter.swift */; };
 		7D90D2581F76BCB20056CA73 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D90D2571F76BCB20056CA73 /* CheckoutViewController.swift */; };
 		7D90D25A1F76C2490056CA73 /* LineItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D90D2591F76C2490056CA73 /* LineItemTableViewCell.swift */; };
 		7D90D2601F7ABC4C0056CA73 /* ProductTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D90D25F1F7ABC4C0056CA73 /* ProductTests.swift */; };
@@ -62,6 +65,9 @@
 		7D3036BB1F75812300F5A1F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D3036C01F75812300F5A1F0 /* ShopBagUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShopBagUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3036C61F75812300F5A1F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D6C30232115E29A00690B7B /* Currencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currencies.swift; sourceTree = "<group>"; };
+		7D6C302E2115F70200690B7B /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
+		7D6C30302115FC8500690B7B /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
 		7D90D2561F7653720056CA73 /* ShopBag-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ShopBag-Bridging-Header.h"; sourceTree = "<group>"; };
 		7D90D2571F76BCB20056CA73 /* CheckoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 		7D90D2591F76C2490056CA73 /* LineItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -151,6 +157,7 @@
 			children = (
 				7DC083D41F75ADEB008FCD67 /* ProductsList */,
 				7DC083D91F75AE71008FCD67 /* Checkout */,
+				7D6C30222115E20C00690B7B /* Network */,
 				7D3036A41F75812200F5A1F0 /* AppDelegate.swift */,
 				7DC083E41F75BCEE008FCD67 /* Utils.swift */,
 				7D3036A81F75812200F5A1F0 /* Main.storyboard */,
@@ -183,6 +190,24 @@
 				7D3036C61F75812300F5A1F0 /* Info.plist */,
 			);
 			path = ShopBagUITests;
+			sourceTree = "<group>";
+		};
+		7D6C30222115E20C00690B7B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7D6C30302115FC8500690B7B /* ApiRouter.swift */,
+				7D6C302E2115F70200690B7B /* DataRequest.swift */,
+				7D6C30292115E8F700690B7B /* Response */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		7D6C30292115E8F700690B7B /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				7D6C30232115E29A00690B7B /* Currencies.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 		7DC083D41F75ADEB008FCD67 /* ProductsList */ = {
@@ -514,6 +539,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D6C30242115E29A00690B7B /* Currencies.swift in Sources */,
+				7D6C302F2115F70200690B7B /* DataRequest.swift in Sources */,
+				7D6C30312115FC8500690B7B /* ApiRouter.swift in Sources */,
 				7D90D25A1F76C2490056CA73 /* LineItemTableViewCell.swift in Sources */,
 				7DC083E11F75B71B008FCD67 /* LineItem.swift in Sources */,
 				7D3036A71F75812200F5A1F0 /* ProductsViewController.swift in Sources */,

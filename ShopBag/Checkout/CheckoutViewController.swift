@@ -17,6 +17,8 @@ class CheckoutViewController: UITableViewController {
   
   let segmentedButtonCurrencyOrder: [Int: Currency] = [0: .usd, 1: .eur, 2: .chf, 3: .gbp]
   
+  let apiClient = URLSessionNetworkClient()
+  
   @IBOutlet weak var currencySelectionView: UISegmentedControl!
   
   @IBOutlet weak var totalPriceLabel: UILabel!
@@ -94,91 +96,37 @@ class CheckoutViewController: UITableViewController {
   }
   
   private func getCurrencyRates() {
-    let urlString = "http://apilayer.net/api/live?currencies=EUR,CHF,GBP&access_key=069020abea25d11b6f595ffe728488fe" // NOTE: in the real world access_key would be out of band
-    
-    let url = URL(string: urlString)!
-    
-    let request = URLRequest(url: url,
-                             cachePolicy: .reloadIgnoringLocalCacheData,
-                             timeoutInterval: 3.0)
-    
-    
-    let task = URLSession.shared.dataTask(with: request, completionHandler: apiHandler)
-    task.resume()
+    let getRatesEndpoint = ApiRouter.getRatesFor(currencies:  ["EUR","CHF","GBP"])
+    apiClient.request(to: getRatesEndpoint) { (result: Result<Currencies>) in
+      switch result {
+      case .success(let currencyRates):
+        if currencyRates.success {
+          let dateTime = Date(timeIntervalSince1970: TimeInterval(currencyRates.timestamp))
+          print("JSON API call success: updated rates at \(dateTime)")
+          
+          self.currencyRatios = self.loadRates(from: currencyRates.quotes)
+          print(self.currencyRatios)
+          
+          self.enableSelectCurrencyButton()
+        }
+        else {
+          self.disableSelectCurrencyButton()
+        }
+      case .failure(let error):
+        print("JSON API call failed: \(error.localizedDescription)")
+        self.disableSelectCurrencyButton()
+      }
+    }
   }
   
-  
-  private func apiHandler(data: Data?, response: URLResponse?, error: Error?) {
-    let msg = "JSON API call failed:"
-    if error != nil {
-      print("\(msg) \(error!.localizedDescription)")
-      disableSelectCurrencyButton()
-      return
-    }
+  func loadRates(from quotes: [String: Double]) -> [Currency: Double] {
+    let initialValue: [Currency: Double] = [.usd: 1.0]
     
-    guard let httpStatus = response as? HTTPURLResponse,
-      httpStatus.statusCode >= 200,
-      httpStatus.statusCode <= 299 else {
-      // check for http errors
-      print("\(msg) HTTP status code should be 2xx")
-        print("response = \(String(describing: response))")
-      disableSelectCurrencyButton()
-      return
-    }
-    
-    do {
-      guard let data = data else {
-        print("\(msg) HTTP body contains no data")
-        disableSelectCurrencyButton()
-        return
-      }
-      guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
-        print("\(msg) Error deserializing JSON")
-        disableSelectCurrencyButton()
-        return
-      }
-      
-      /*
-      {
-        "success": true,
-        "terms": "https://currencylayer.com/terms",
-        "privacy": "https://currencylayer.com/privacy",
-        "timestamp": 1506365047,
-        "source": "USD",
-        "quotes": {
-          "USDEUR": 0.844201,
-          "USDCHF": 0.966899,
-          "USDGBP": 0.74238
-        }
-      }
-      */
-      
-      if let success = json["success"] as? Bool,
-        success,
-        let quotes = json["quotes"] as? [String: Double],
-        let timestamp = json["timestamp"] as? Int {
-        let initialValue: [Currency: Double] = [.usd: 1.0]
-        self.currencyRatios = quotes.reduce(initialValue) { (acc, item) in
-          let key = item.key
-          let index = key.index(key.startIndex, offsetBy: 3)
-          let currencyString = String(describing: key[index...])
-          return acc.merge(with: [Currency(rawValue: currencyString)! : (1.0 / item.value)])
-        }
-        
-        let dateTime = Date(timeIntervalSince1970: TimeInterval(timestamp))
-        print("JSON API call success: updated rates at \(dateTime)")
-        print(self.currencyRatios)
-        enableSelectCurrencyButton()
-      }
-      else {
-        print("\(msg) Response has no success status or no quotes are present")
-        disableSelectCurrencyButton()
-        return
-      }
-      
-    } catch let error as NSError {
-      print(error.debugDescription)
-      disableSelectCurrencyButton()
+    return quotes.reduce(initialValue) { (acc, item) in
+      let key = item.key
+      let index = key.index(key.startIndex, offsetBy: 3)
+      let currencyString = String(describing: key[index...])
+      return acc.merge(with: [Currency(rawValue: currencyString)!: item.value])
     }
   }
   
